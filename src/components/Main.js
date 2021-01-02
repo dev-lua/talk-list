@@ -12,10 +12,48 @@ export default class Main extends Component {
   state = {
     newTask: '',
     task: [],
+    index: -1,
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { task, index } = this.state;
+    let { newTask } = this.state;
+    newTask = newTask.trim();
+
+    if(task.indexOf(newTask) !== -1) return;
+
+    const newsTasks = [...task];
+
+    if(index === -1) {
+      this.setState({
+        task: [...newsTasks, newTask],
+        newTask: '',
+      });
+    } else {
+      newsTasks[index] = newTask;
+
+      this.setState({
+        task: [...newsTasks],
+        index: -1,
+      });
+    }
+
+  }
+
+  handleChanged = (e) => {
+    this.setState({
+      newTask: e.target.value,
+    });
+  }
+
   handleEdit = (e, index) => {
-    console.log('Edit', index);
+    const { task } = this.state;
+
+    this.setState({
+      index,
+      newTask: task[index],
+    })
   }
 
   handleDelete = (e, index) => {
@@ -28,25 +66,8 @@ export default class Main extends Component {
     });
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { task } = this.state;
-    let { newTask } = this.state;
-    newTask = newTask.trim();
 
-    if(task.indexOf(newTask) !== -1) return;
 
-    const newsTasks = [...task];
-    this.setState({
-      task: [...newsTasks, newTask],
-    });
-  }
-
-  handleChanged = (e) => {
-    this.setState({
-      newTask: e.target.value,
-    });
-  }
 
   render() {
     const { newTask, task } = this.state;

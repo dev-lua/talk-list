@@ -1,0 +1,12 @@
+{
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": -1,
+    "explorer.confirmDelete": false,
+    "workbench.iconTheme": "material-icon-theme"
+}

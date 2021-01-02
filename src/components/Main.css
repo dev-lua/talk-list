@@ -72,3 +72,9 @@
 .task li .delete {
   transition: all 600ms;
 }
+
+.task
+ li span {
+   display: flex;
+   align-items: center;
+ }

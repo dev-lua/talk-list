@@ -25,12 +25,14 @@ export default class Main extends Component {
   }
 
   handleSubmit = (e) => {
+    // Does not update the page and get data
     e.preventDefault();
     const { task, index } = this.state;
     let { newTask } = this.state;
     newTask = newTask.trim();
 
-    if(task.indexOf(newTask) !== -1) return;
+    /* Is there or is it null? */
+    if(task.indexOf(newTask) !== -1 || newTask === "") return;
     const newsTasks = [...task];
 
     if(index === -1) {
@@ -43,6 +45,7 @@ export default class Main extends Component {
       this.setState({
         task: [...newsTasks],
         index: -1,
+        newTask: '',
       });
     }
   }
@@ -66,15 +69,17 @@ export default class Main extends Component {
     const newsTasks = [...task]
     newsTasks.splice(index, 1);
     this.setState({
-      task: [...newsTasks]
+      task: [...newsTasks],
+      newTask: index === -1 ? '' : '' ,
     });
+
   }
 
   render() {
     const { newTask, task } = this.state;
     return (
       <div className="main">
-        <h1>Talk List</h1>
+        <h1>Moon Talk List</h1>
         <Form
           handleSubmit={this.handleSubmit}
           handleChanged={this.handleChanged}

@@ -11,6 +11,8 @@ export default function Form({ handleChanged, handleSubmit, newTask}) {
         onChange={handleChanged}
         type="text"
         value={newTask}
+        maxlength="25"
+        placeholder="Input your taks here..."
       />
       <button type="submit">
         <FaPlus />

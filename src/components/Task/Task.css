@@ -8,15 +8,17 @@
   justify-content: space-between;
   padding: 10px;
   transition: all 600ms;
+  border-bottom: double 1px #ccc;
 }
 
 .task li:hover {
-  background: rgb(134, 134, 134);
+  background: rgb(250, 224, 224);
+  border-radius: 5px;
 }
 
 .task li .edit {
   margin-right: 15px;
-  color: #e5f04c;
+  color: #3e87e7;
 }
 
 .task li .delete {

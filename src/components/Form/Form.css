@@ -9,14 +9,15 @@
   height: 40px;
   padding: 0 20px;
   font-size: 20px;
-  border: 1px solid #ccc;
-  min-width: 80px;
+  border: 1px solid rgb(201, 201, 201);
+  width: 90%;
 }
+
 .form button[type="submit"] {
   border: none;
   height: 40px;
-  width: 40px;
-  background: #f04c64;
+  width: 10%;
+  background: #e73650;
   color: #fff;
   display: flex;
   align-items: center;
